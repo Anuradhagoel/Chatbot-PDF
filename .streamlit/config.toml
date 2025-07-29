@@ -1,5 +1,0 @@
-[runner]
-python_version = "3.9"
-[theme]
-base="dark"
-primaryColor="#ffae4b"
