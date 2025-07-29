@@ -115,7 +115,7 @@ def get_conversation_chain(vectorstore, conversational_model, model_temperature=
     elif conversational_model == "HuggingFace":
         st.info("Using HuggingFace conversational model (via pipeline).")
         # USING THE SMALLEST FLAN-T5 MODEL
-        model_id = "google/flan-t5-small"
+        model_id = "google/flan-t5-base"
         
         try:
             tokenizer = AutoTokenizer.from_pretrained(model_id)
@@ -137,7 +137,7 @@ def get_conversation_chain(vectorstore, conversational_model, model_temperature=
     else: # Fallback if invalid choice (shouldn't happen with radio buttons)
         st.warning("Invalid conversational model choice. Defaulting to HuggingFace conversational model.")
         # USING THE SMALLEST FLAN-T5 MODEL
-        model_id = "google/flan-t5-small"
+        model_id = "google/flan-t5-base"
         try:
             tokenizer = AutoTokenizer.from_pretrained(model_id)
             model = AutoModelForSeq2SeqLM.from_pretrained(model_id, device_map="auto")
