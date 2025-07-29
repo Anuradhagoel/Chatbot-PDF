@@ -93,7 +93,7 @@ def get_conversation_chain(vectorstore, conversational_model, model_temperature=
         except Exception as e:
             st.warning(f"Could not initialize OpenAI Chat Model (Error: {e}). Falling back to HuggingFace conversational model.")
             # FALLBACK TO THE SMALLEST FLAN-T5 MODEL
-            model_id = "google/flan-t5-small" # Using the smallest model
+            model_id = "google/flan-t5-base" # Using the smallest model
             try:
                 tokenizer = AutoTokenizer.from_pretrained(model_id)
                 model = AutoModelForSeq2SeqLM.from_pretrained(model_id, device_map="auto")
