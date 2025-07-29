@@ -64,7 +64,7 @@ def get_vectorstore(text_chunks, embedding_model):
         st.info("Using HuggingFaceInstructEmbeddings.")
         try:
             # Ensure InstructorEmbedding is correctly initialized
-            embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
+            embeddings = HuggingFaceInstructEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         except Exception as e_hf:
             st.error(f"Failed to initialize HuggingFaceInstructEmbeddings (Error: {e_hf}). Check its dependencies like sentence-transformers, torch, and transformers.")
             st.stop()
