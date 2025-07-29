@@ -115,7 +115,7 @@ def get_conversation_chain(vectorstore, conversational_model, model_temperature=
     elif conversational_model == "HuggingFace":
         st.info("Using HuggingFace conversational model (via pipeline).")
         # USING THE SMALLEST FLAN-T5 MODEL
-        model_id = "google/flan-t5-xxl"
+        model_id = "google/flan-t5-small"
         
         try:
             tokenizer = AutoTokenizer.from_pretrained(model_id)
